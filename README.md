@@ -33,7 +33,9 @@ This project uses AWS cloud infrastructure. For a complete list of resources see
    Make sure to replace the relevant lambda ARNs (e.g. "Resource": "arn:aws:lambda:<REGION_NAME>:<ACCOUNT_NAME>:function:<FUNCTION_NAME>")
 4. Create a [CloudWatch](https://console.aws.amazon.com/cloudwatch) event to call the Step Function from the previous step with the desired interval (e.g. 4 hours)
 5. Create an [API Gateway](https://console.aws.amazon.com/apigateway) with a resource named myAggregatedHub and a GET method. Point the method to invoke the main function. Make sure to pass an AWS Proxy Event.
-6. Create a [Heroku](https://dashboard.heroku.com/) app.
+6. Set the following main environment variables:
+    1. SUPPORT_AGGREGATION_HUB_AWS_PROFILE - The AWS profile with permission nto read the DynamoDB.
+    2. SUPPORT_AGGREGATION_HUB_AWS_REGION - The AWS region in which DynamoDB is set.
 
 ### Updating
 For Main

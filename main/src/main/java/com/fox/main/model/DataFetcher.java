@@ -1,8 +1,6 @@
 package com.fox.main.model;
 
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
@@ -21,17 +19,10 @@ import java.util.stream.Collectors;
 
 public class DataFetcher {
     private static AmazonDynamoDB getDBClient() {
-        return AmazonDynamoDBClientBuilder.standard().withCredentials(new AWSCredentialsProvider() {
-			@Override
-			public AWSCredentials getCredentials() {
-				return new BasicAWSCredentials("AKIA2XDRFGH5YP7SRMM6", "FjO92s8gjwrZMTbuxtu//4X1T2Z21xjkDdosNgh/");
-			}
-
-			@Override
-			public void refresh() {
-
-			}
-		}).withRegion("us-east-1").build();
+        Map<String, String> env = System.getenv();
+        return AmazonDynamoDBClientBuilder.standard().withCredentials(
+        		new ProfileCredentialsProvider(env.get("SUPPORT_AGGREGATION_HUB_AWS_PROFILE"))
+		).withRegion(env.get("SUPPORT_AGGREGATION_HUB_AWS_REGION")).build();
     }
 
     public static List<ReducedCases> fetch(List<CRM> crms) {
