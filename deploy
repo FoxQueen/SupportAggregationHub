@@ -11,6 +11,7 @@ update () {
     if [ "$service"  = 'main' ]; then
       cd main || exit
       ./gradlew stage
+      heroku local web
       cd - || exit
     else
       cd data || exit

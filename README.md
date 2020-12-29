@@ -48,7 +48,7 @@ For other packages:
 1. Run ./gradlew <FUNCTION_NAME>Zip (e.g. ./gradlew mainZip). Note that mainZip is available in the main module and all other scripts are available at the data module.
 2. Upload the created .zip file available at <PATH_TO_MODULE>/build/distributions/<FUNCTION_NAME>-1.0.SNAPSHOT.zip to the corresponding Lambda function.
 
-###### optional: For all packages: If you updated the config script in step 2 of the deployment you can use the "deploy" helper script for both steps with: ./deploy update <FUNCTION_NAME_1> <FUNCTION_NAME_2>... (e.g. ./deploy update main cache)
+###### optional: For all packages: If you updated the config script in step 2 of the deployment you can use the "deploy" helper script for both steps with: ./deploy update <FUNCTION_NAME_1> <FUNCTION_NAME_2>... (e.g. ./deploy update main cache). Note that main will run locally.
 
 ### Configuring
 * Cache time-to-live: Change the CACHE_TTL environment variable in the cache Lambda function. (e.g. 900000)
