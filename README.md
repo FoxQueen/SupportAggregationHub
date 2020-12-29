@@ -4,8 +4,6 @@ A support aggregation hub for Intuit hands-on interview.
 ## For Care Agents
 Send a simple GET request to <URL>/myAggregatedHub where <URL> is the deployment endpoint.
 
-For an example see [example](#example)
-
 ## For Developers
 
 This project uses AWS cloud infrastructure. For a complete list of resources see [Architecture](#resources-list) 
@@ -87,10 +85,3 @@ A list of required AWS resources:
 * [Step Functions](https://console.aws.amazon.com/states)
 * [CloudWatch](https://console.aws.amazon.com/cloudwatch) events
 * [API Gateway](https://console.aws.amazon.com/apigateway)
-
-
-## Example
-An example is available at: []()
-Resources are accessible for read-only at:
-with:
-or credentials:
