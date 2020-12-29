@@ -1,0 +1,33 @@
+#!/bin/bash
+. ./config
+
+show_help () {
+  echo "HELP!"
+}
+
+update () {
+  for service in "$@"; do
+    echo -e "\033[1;36mUpdating $service"
+    if [ "$service"  = 'main' ]; then
+      cd main || exit
+      ./gradlew stage
+      cd - || exit
+    else
+      cd data || exit
+      ./gradlew "${service}Zip"
+      pwd=$(pwd)
+      function_name="$(echo "${service}" | tr '[:lower:]' '[:upper:]')_LAMBDA_FUNCTION_NAME"
+      aws lambda update-function-code --function-name "${!function_name}" --zip-file "fileb://${pwd}/build/distributions/${service}-1.0-SNAPSHOT.zip" --profile "${AWS_PROFILE}" --region "${AWS_REGION}"
+      cd - || exit
+    fi
+  done
+}
+
+case "$1" in
+  update)
+    update "${@:2}"
+    ;;
+  *)
+    show_help
+    ;;
+esac

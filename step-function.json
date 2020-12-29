@@ -1,0 +1,74 @@
+{
+  "Comment": "A Hello World example of the Amazon States Language using Pass states",
+  "StartAt": "GetCache",
+  "States": {
+    "GetCache": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:736824209915:function:cache",
+      "Next": "Cached"
+    },
+    "Cached": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.data",
+          "IsPresent": false,
+          "Next": "Mapper"
+        }
+      ],
+      "Default": "Final"
+    },
+    "Mapper": {
+      "Type": "Map",
+      "InputPath": "$.crms",
+      "ItemsPath": "$",
+      "MaxConcurrency": 0,
+      "Iterator": {
+        "StartAt": "Connector",
+        "States": {
+          "Connector": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:us-east-1:736824209915:function:connector",
+            "Next": "Sterilizer"
+          },
+          "Sterilizer": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:us-east-1:736824209915:function:sterilizer",
+            "Next": "Filter"
+          },
+          "Filter": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:us-east-1:736824209915:function:filter",
+            "Next": "PartialMapper"
+          },
+          "PartialMapper": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:us-east-1:736824209915:function:mapper",
+            "Next": "PartialReducer"
+          },
+          "PartialReducer": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:us-east-1:736824209915:function:reducer",
+            "End": true
+          }
+        }
+      },
+      "ResultPath": "$.reducedCasesLists",
+      "Next": "Reducer"
+    },
+    "Reducer": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:736824209915:function:reducer",
+      "Next": "PutCache"
+    },
+    "PutCache": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:736824209915:function:cache",
+      "Next": "Final"
+    },
+    "Final": {
+      "Type": "Pass",
+      "End": true
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="crm_connector.BananaCRMConnectorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-28T22:41:48" hostname="Kens-MBP.lan" time="0.154">
+  <properties/>
+  <testcase name="invokeTest()" classname="crm_connector.BananaCRMConnectorTest" time="0.154"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

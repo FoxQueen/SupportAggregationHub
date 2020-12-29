@@ -1,0 +1,36 @@
+commons/MockContext.java
+ commons.MockContext
+commons/TestLogger.java
+ commons.TestLogger
+commons/TestContext.java
+ commons.TestContext
+commons/MockData.java
+ commons.MockData
+reducer/FinalReducerTest.java
+ reducer.FinalReducerTest
+sterilizer/StrawberrySterilizerTest.java
+ sterilizer.StrawberrySterilizerTest
+commons/InvokeTest.java
+ commons.InvokeTest
+crm_connector/BananaCRMConnectorTest.java
+ crm_connector.BananaCRMConnectorTest
+mapper/StrawberryMapperTest.java
+ mapper.StrawberryMapperTest
+filter/BananaFilterEmptyTest.java
+ filter.BananaFilterEmptyTest
+sterilizer/BananaSterilizerTest.java
+ sterilizer.BananaSterilizerTest
+reducer/BananaReducerTest.java
+ reducer.BananaReducerTest
+crm_connector/StrawberryCRMConnectorTest.java
+ crm_connector.StrawberryCRMConnectorTest
+cache/CacheNotCachedTest.java
+ cache.CacheNotCachedTest
+cache/CacheTest.java
+ cache.CacheTest
+reducer/StrawberryReducerTest.java
+ reducer.StrawberryReducerTest
+filter/StrawberryFilterEmptyTest.java
+ filter.StrawberryFilterEmptyTest
+mapper/BananaMapperTest.java
+ mapper.BananaMapperTest

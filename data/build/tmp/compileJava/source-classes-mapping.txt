@@ -1,0 +1,79 @@
+crm_connector/connectors/BananaCRMConnector.java
+ crm_connector.connectors.BananaCRMConnector
+ crm_connector.connectors.BananaCRMConnector$1
+test/java/commons/TestContext.java
+ commons.TestContext
+test/java/commons/TestLogger.java
+ commons.TestLogger
+crm_connector/connectors/CRMConnector.java
+ crm_connector.connectors.CRMConnector
+crm_connector/connectors/SampleCRMConnector.java
+ crm_connector.connectors.SampleCRMConnector
+commons/filters/Filter.java
+ commons.filters.Filter
+crm_connector/connectors/StrawberryCRMConnector.java
+ crm_connector.connectors.StrawberryCRMConnector
+ crm_connector.connectors.StrawberryCRMConnector$1
+test/java/commons/MockData.java
+ commons.MockData
+commons/Input.java
+ commons.Input
+test/java/commons/InvokeTest.java
+ commons.InvokeTest
+commons/Case.java
+ commons.Case
+ commons.Case$CaseStatus
+crm_connector/paginator/CRMConnectorPaginator.java
+ crm_connector.paginator.CRMConnectorPaginator
+ crm_connector.paginator.CRMConnectorPaginator$CRMConnectorPaginatorReadObject
+commons/Response.java
+ commons.Response
+crm_connector/connectors/CRMConnectorType.java
+ crm_connector.connectors.CRMConnectorType
+commons/ReducedCases.java
+ commons.ReducedCases
+commons/Context.java
+ commons.Context
+ commons.Context$1
+test/java/mapper/StrawberryMapperTest.java
+ mapper.StrawberryMapperTest
+test/java/mapper/BananaMapperTest.java
+ mapper.BananaMapperTest
+test/java/commons/MockContext.java
+ commons.MockContext
+test/java/crm_connector/StrawberryCRMConnectorTest.java
+ crm_connector.StrawberryCRMConnectorTest
+test/java/reducer/StrawberryReducerTest.java
+ reducer.StrawberryReducerTest
+test/java/reducer/BananaReducerTest.java
+ reducer.BananaReducerTest
+test/java/cache/CacheNotCachedTest.java
+ cache.CacheNotCachedTest
+test/java/filter/StrawberryFilterEmptyTest.java
+ filter.StrawberryFilterEmptyTest
+test/java/crm_connector/BananaCRMConnectorTest.java
+ crm_connector.BananaCRMConnectorTest
+test/java/reducer/FinalReducerTest.java
+ reducer.FinalReducerTest
+test/java/filter/BananaFilterEmptyTest.java
+ filter.BananaFilterEmptyTest
+test/java/cache/CacheTest.java
+ cache.CacheTest
+commons/Handler.java
+ commons.Handler
+filter/Handler.java
+ filter.Handler
+cache/Handler.java
+ cache.Handler
+mapper/Handler.java
+ mapper.Handler
+test/java/sterilizer/BananaSterilizerTest.java
+ sterilizer.BananaSterilizerTest
+reducer/Handler.java
+ reducer.Handler
+crm_connector/Handler.java
+ crm_connector.Handler
+sterilizer/Handler.java
+ sterilizer.Handler
+test/java/sterilizer/StrawberrySterilizerTest.java
+ sterilizer.StrawberrySterilizerTest
